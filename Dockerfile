@@ -18,7 +18,7 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 # build runtime image
-FROM microsoft/aspnetcore:1.1
-WORKDIR /app
-COPY --from=build-env /app/out .
+#FROM microsoft/aspnetcore:1.1
+#WORKDIR /app
+#COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "Talabat.FrontEndDemo.Web.dll"]
